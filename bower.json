@@ -5,7 +5,7 @@
   "authors": [
     "Gattermeier <matthias.gattermeier@gmail.com>"
   ],
-  "main": "../assets/css/base.css",
+  "main": "./assets/css/base.css",
   "moduleType": [
     "amd"
   ],
