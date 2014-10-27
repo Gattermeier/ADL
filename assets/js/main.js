@@ -1,3 +1,3 @@
 /**
- * Created by matthias on 10/27/14.
+ * Created by M. Gattermeier on 10/27/14.
  */
