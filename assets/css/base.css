@@ -3,4 +3,9 @@
  */
 @import url(../../libs/bootstrap/dist/css/bootstrap.min.css);
 
+/* styles to fix menu stuff */
 @import url(./menu.css);
+
+/* base styles for off canvas */
+@import url(../../libs/jasny-bootstrap/dist/css/jasny-bootstrap.min.css);
+@import url(./jasny-bootstrap-fix.css);

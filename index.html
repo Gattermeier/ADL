@@ -1,22 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="http://support.adl.org/images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta property="twitter:account_id" content="19670226"/>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta property="twitter:account_id" content="19670226" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <title>
+        <t:value id="title">title</t:value>
+    </title>
+
+    <t:if test="isNull(description)">
+        <meta name="Description" content="Anti-Defamation League"/>
+    </t:if>
+    <t:else>
+        <t:set id="mdesc" value="toText(description, '') "/>
+        <t:set id="mdesc" value="escapeQuotes(mdesc) "/>
+        <t:set id="mydesc" value="replace(mdesc,'\\"
+        ','') " />
+        <meta name="Description" content="${mydesc}"/>
+    </t:else>
+
+
     
-    <script data-main="./controllers/app" src="./libs/requirejs/require.js"></script>
+    <link href="./assets/css/base.css" rel="stylesheet">
+  
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    
+    <script data-main="./controllers/fixed-wrapper" src="./libs/requirejs/require.js"></script>
+      
+      
+    
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-fixed-top navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navbar-offcanvas" data-canvas="body" style="float:left; margin-left: 15px;">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Anti-Defamation League</a>
+        </div>
+        <div class="navbar-offcanvas offcanvas navmenu-fixed-left">
+
+        
+        <div class="visible-xs visible-sm" style="padding: 8px 15px;">
+          <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control">
+            <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
+            <input type="hidden" name="ie" value="UTF-8">
+            <span class="input-group-btn">
+            <input type="image" src="http://support.adl.org/images/12/search-blue.png" name="sa" class="btn btn-default" style="height:34px;">
+           </span>
+          </div>
+          </form>
+      </div>
+    
+         
+          <ul class="nav navbar-nav visible-xs visible-sm">
+            <li><a href="../navmenu/">Slide in</a></li>
+            <li><a href="../navmenu-push/">Push</a></li>
+            <li><a href="../navmenu-reveal">Reveal</a></li>
+            <li class="active"><a href="./">Off canvas navbar</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          
+        </div><!--/.nav-collapse -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Offcanvas Navbar example</h1>
+        <p>This example demonstrates using the offcanvas plugin with the navbar.</p>
+      </div>
+      
+      <div class="visible-xs"> XS </div>
+      <div class="visible-sm"> SM </div>
+      <div class="visible-md"> MD </div>
+      <div class="visible-lg"> LG </div>
+      <p>
+        By default the navbar is show on the right side of the screen. You can show it on the left side instead by
+        adding <code>.navmenu-fixed-left</code> to the <code>.navbar-offcanvas</code>.
+      </p>
+    </div> <!-- /container -->
 
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+    
 
-</head>
-<body>
-
-Hello world
-
-<span id="year"></span> 
-
-</body>
+  </body>
 </html>

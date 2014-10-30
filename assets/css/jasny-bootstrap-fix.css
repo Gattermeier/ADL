@@ -1,0 +1,5 @@
+.navbar-fixed-top {
+    transform: none;
+    -webkit-transform: none;
+}
+.navmenu-nav.dropdown-menu { position:static; }
