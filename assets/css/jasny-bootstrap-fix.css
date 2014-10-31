@@ -3,3 +3,11 @@
     -webkit-transform: none;
 }
 .navmenu-nav.dropdown-menu { position:static; }
+
+
+
+
+/*@media (min-width: 768px)
+.navbar-toggle {
+display: none;
+}*/
