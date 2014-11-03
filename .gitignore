@@ -5,3 +5,6 @@ dev
 14wrapper.css
 wrapper-dev.html
 wrapper-fixed.html
+*.log
+
+test.html
