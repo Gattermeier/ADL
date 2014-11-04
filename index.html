@@ -1,640 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="http://support.adl.org/images/favicon.ico" type="image/x-icon">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
-<meta property="twitter:account_id" content="19670226"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://support.adl.org/images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta property="twitter:account_id" content="19670226"/>
 
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-<title>
-    <t:value id="title">title</t:value>
-</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <title>
+        <t:value id="title">title</t:value>
+    </title>
 
-<t:if test="isNull(description)">
-    <meta name="Description" content="Anti-Defamation League"/>
-</t:if>
-<t:else>
-    <t:set id="mdesc" value="toText(description, '') "/>
-    <t:set id="mdesc" value="escapeQuotes(mdesc) "/>
-    <meta name="Description" content="${mydesc}"/>
-</t:else>
+    <t:if test="isNull(description)">
+        <meta name="Description" content="Anti-Defamation League"/>
+    </t:if>
+    <t:else>
+        <t:set id="mdesc" value="toText(description, '') "/>
+        <t:set id="mdesc" value="escapeQuotes(mdesc) "/>
+        <meta name="Description" content="${mydesc}"/>
+    </t:else>
 
+    <link href="./assets/css/base2.css" rel="stylesheet">
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-
-<link href="./assets/css/base.css" rel="stylesheet">
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<script data-main="./controllers/fixed-wrapper" src="./libs/requirejs/require.js"></script>
-
-<style type="text/css">
-html, body {
-    height: 100%;
-}
-
-.navbar-toggle {
-    float: left;
-    margin-left: 15px;
-}
-
-.navmenu {
-    z-index: 1;
-}
-
-.canvas {
-    position: relative;
-    left: 0;
-    z-index: 2;
-    min-height: 100%;
-    padding: 50px 0 0 0;
-    background: #fff;
-}
-
-@media (min-width: 0) {
-    .navbar-toggle {
-        display: block; /* force showing the toggle */
-    }
-}
-
-@media (min-width: 992px) {
-    body {
-        padding: 0;
-    }
-
-    .navbar {
-        right: auto;
-        background: none;
-        border: none;
-    }
-
-    .canvas {
-        padding: 0;
-    }
-}
-
-.bluebar-mobile {
-    padding-top: 0px;
-    padding-right: 0;
-    padding-bottom: 0px;
-    padding-left: 0;
-    background-image: none;
-    background-repeat: no-repeat;
-    filter: none;
-    margin-top: 0px;
-    clear: both;
-    height: 42px;
-    box-shadow: none;
-    background-color: #4F7DD5;
-    overflow: none;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: white;
-}
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background: #1e407f !important;
-}
-
-.logo-sm {
-    padding-top: 0;
-    padding: 2px 0 0 0;
-    height: 100%;
-    background-color: #1e407f;
-    margin: 0;
-}
-
-.logo-sm img {
-    height: 23px;
-    margin: 0 !important;
-    padding: 0 !important;
-
-}
-
-@media (min-width: 768px) {
-    .bluebar-mobile .navbar-nav > li > a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-}
-
-.bluebar-mobile li, .bluebar-mobile li a {
-    height: 100%;
-}
-
-.bluebar-mobile-button a span {
-    background-color: #FFFFFF;
-    border-radius: 3px;
-    color: #1E407F;
-    padding: 5px 7px 5px;
-}
-
-#bluebar .navbar .nav {
-    position: relative;
-    left: 0;
-    display: block;
-    float: left;
-    margin: 0 0 0 0;
-}
-
-#bluebar .navbar .nav > li > a {
-    float: none;
-    padding: 5px 5px 9px 17px;
-    line-height: 19px;
-    color: #fcfcfc;
-    text-decoration: none;
-    text-shadow: none;
-    margin-top: 6px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-#bluebar .navbar-collapse .navbar-nav.navbar-right:last-child {
-    margin-right: 8px;
-}
-
-#bluebar .navbar-search .search-query {
-    -moz-transition: none;
-    background-color: #7aa3f2 !important;
-    border: none;
-    box-shadow: none;
-    color: #FCFCFC;
-    font-size: 13px;
-    font-weight: normal;
-    padding: 5px 10px;
-    text-shadow: none;
-    height: 27px !important;
-    width: 110px;
-}
-
-#bluebar .navbar-search {
-    position: relative;
-    float: left;
-    margin-top: 4px;
-    margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-    .bluebar-mobile-button a.donate {
-        background: #f0ad4e;
-    }
-
-    .bluebar-mobile-button a.signup {
-        background: #5cb85c;
-    }
-
-    .bluebar-mobile-button a span {
-        background: none;
-        border: none;
-        color: white;
-    }
-
-}
-
-/*overwrite 12social.css*/
-#wrapper-footer .socialmediabar {
-    float: left;
-    margin-left: 0px !important;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-#wrapper-footer .socialmediabar li {
-    float: left;
-    list-style: none;
-}
-
-#wrapper-footer .socialmediabar ul {
-    float: left;
-    padding: 0 10px 0 0;
-    margin-bottom: 10px !important;
-}
-
-#wrapper-footer .socialmediabar li img {
-    width: 32px;
-    height: 32px;
-    margin: 0px !important;
-}
-
-.socialbutton {
-    color: #1F407F;
-    border: 1px solid #1F407F;
-    border-radius: 3px 3px 3px 3px;
-    padding: 1px 10px 1px 10px;
-    background-color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 300;
-    height: 32px;
-    margin-bottom: 10px;
-
-}
-
-#wrapper-footer img {
-    margin-top: 24px !important;
-    margin-bottom: 22px !important;
-}
-
-#wrapper-footer p {
-    margin: 0;
-}
-
-/*content container should behave on SM as it does on XS*/
-
-@media (min-width: 768px) and (max-width: 992px) {
-    .container {
-        width: auto;
-    }
-}
-
-/*prevent container change in LG*/
-
-@media (min-width: 1200px) {
-    .container {
-        width: 970px;
-    }
-}
-
-@media (max-width: 1999px) and (min-width: 992px) {
-    #leftcol {
-        margin-left: -8px;
-    }
-}
-
-.tagline p {
-    text-align: right;
-    font-size: 16px;
-    line-height: 24px;
-    font-family: 'Century Gothic', 'Avant Garde', 'Futura', Geometric, sans-serif;
-    color: #4f7dd5;
-
-}
-
-</style>
-
+    <script data-main="./controllers/fixed-wrapper" src="./libs/requirejs/require.js"></script>
 </head>
-
 <body>
 
+<aside>
+    <div class="navmenu navmenu-default navmenu-fixed-left">
 
-<div class="navmenu navmenu-default navmenu-fixed-left">
-
-    <div class="" style="padding: 8px 15px;">
-        <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control">
-                <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
-                <input type="hidden" name="ie" value="UTF-8">
-            <span class="input-group-btn">
-            <input type="image" src="http://support.adl.org/images/12/search-blue.png" name="sa" class="btn btn-default"
-                   style="height:34px;">
-           </span>
-            </div>
-        </form>
-    </div>
-
-    <ul class="nav navmenu-nav">
-        <li><a href="#">Newsroom</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Video</a></li>
-        <li><a href="#">Take Action</a></li>
-        <br>
-
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Anti-Semitism</a>
-            <ul class="dropdown-menu navmenu-nav">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">United States</a></li>
-                <li><a href="#">International</a></li>
-                <li><a href="#">Muslim/Arab World</a></li>
-
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Combating Hate</a>
-            <ul class="dropdown-menu navmenu-nav">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">Domestic Extremism & Terrorism</a></li>
-                <li><a href="#">International Extremism & Terrorism</a></li>
-                <li><a href="#">Hate Crimes Law</a></li>
-                <li><a href="#">Cyberhate</a></li>
-                <li><a href="#">Community Security</a></li>
-                <li><a href="#">Law Enforcement</a></li>
-                <li><a href="#">Hate Symbols Database</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Israel & International</a>
-            <ul class="dropdown-menu navmenu-nav">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">Europe</a></li>
-                <li><a href="#">Iran</a></li>
-                <li><a href="#">Israel & Middle East</a></li>
-                <li><a href="#">Latin America</a></li>
-                <li><a href="#">UN & International Organizations</a></li>
-                <li><a href="#">U.S. Anti-Israel Activity</a></li>
-
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Civil Rights</a>
-            <ul class="dropdown-menu navmenu-nav">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">ADL in the Courts</a></li>
-                <li><a href="#">Religious Freedom</a></li>
-                <li><a href="#">Discrimination</a></li>
-                <li><a href="#">Immigration</a></li>
-
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education & Outreach</a>
-            <ul class="dropdown-menu navmenu-nav">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">Anti-Bias Education</a></li>
-                <li><a href="#">Bullying/Cyberbulling</a></li>
-                <li><a href="#">Holocaust Education</a></li>
-                <li><a href="#">Confronting Anti-Semitism</a></li>
-                <li><a href="#">Campus Affairs</a></li>
-                <li><a href="#">Curriculum Resources</a></li>
-                <li><a href="#">No Place for Hate</a></li>
-                <li><a href="#">Interfaith Affairs</a></li>
-                <li><a href="#">Hispanic/Latino Affairs</a></li>
-
-            </ul>
-        </li>
-
-        <br>
-        <li><a href="#">About ADL</a></li>
-        <li><a href="#">Your Local ADL</a></li>
-    </ul>
-</div>
-
-<div class="canvas" style="">
-<div class="navbar navbar-default navbar-fixed-top visible-xs visible-sm bluebar-mobile" style="">
-    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu"
-            data-canvas=".canvas">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-
-    <ul class="nav navbar-nav" style="margin:0px; height:100%;">
-        <li class="logo-sm visible-xs visible-sm" style="float:left"><a href="http://www.adl.org"><img
-                src="http://support.adl.org/images/13/adllogo-tablet.png" alt="ADL"></a></li>
-        <li class="visible-sm visible-xs bluebar-mobile-button " style="float:left;"><a class="signup"
-                                                                                        style="padding-top: 14px;"><span
-                class="" style="">Sign up</span></a></li>
-        <li class="visible-sm visible-xs bluebar-mobile-button " style="float:left;"><a class="donate"
-                                                                                        style="padding-top: 14px;"><span
-                class="" style="">Donate</span></a></li>
-
-
-    </ul>
-
-</div>
-
-
-<div class="container">
-
-
-<div class="navbar navbar-default visible-md visible-lg " style="top:0; position: absolute;
-top: 0px;height: 50px;
-z-index: 9999; left:0; right:0;margin-bottom: 20px !important;">
-
-    <div class="navbar-inner" style="box-shadow: none;
-background-color: #4F7DD5;padding-top: 0px;
-padding-right: 0;
-padding-bottom: 0px;
-padding-left: 0;
-background-image: none;
-background-repeat: no-repeat;
-filter: none;
-height:42px;
-margin-top: 0px;
-clear: both;">
-        <div class="container">
-            <div id="bluebar" class="col-md-9 col-md-offset-3" style="padding-left: 0;
-padding-right: 0;">
-
-                <div class="navbar navbar-collapse visible-lg visible-md search-fix" style="padding-left: 0;
-padding-right: 0;">
-                    <ul class="nav navbar-nav">
-                        <li><a href="http://www.adl.org/about-adl/">About</a></li>
-                        <li><a href="http://regions.adl.org">Your Local ADL</a></li>
-                        <li><a href="http://regions.adl.org/action-center/">Take Action</a></li>
-                        <li><a href="http://blog.adl.org/">Blog</a></li>
-                        <li><a href="http://www.adl.org/video/">Video</a></li>
-                        <li><a href="http://www.adl.org/press-center">Newsroom</a></li>
-
-                        <li class="donate"><a href="http://www.adl.org/donate"><span style="">DONATE</span></a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html"
-                                  class="navbar-search hidden-sm" _lpchecked="1">
-                                <div class="input-append">
-                                    <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
-                                    <input type="hidden" name="ie" value="UTF-8">
-                                    <input type="text" name="q" size="35" class="search-query" style="">
-                                    <input type="image" src="http://support.adl.org/images/12/search.png" name="sa"
-                                           height="18" width="19" class="btn"
-                                           style="height: 27px;width: 27px; margin-top: 0; background-color: #7aa3f2;">
-
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
+        <div class="offcanvas-search">
+            <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control">
+                    <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <span class="input-group-btn">
+                        <input type="image" src="http://support.adl.org/images/12/search-blue.png" name="sa" class="btn btn-default">
+                    </span>
                 </div>
-
-            </div>
+            </form>
         </div>
+        <nav>
+            <ul class="nav navmenu-nav">
+                <li><a href="#">Newsroom</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Take Action</a></li>
+                <br>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Anti-Semitism</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">United States</a></li>
+                        <li><a href="#">International</a></li>
+                        <li><a href="#">Muslim/Arab World</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Combating Hate</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Domestic Extremism & Terrorism</a></li>
+                        <li><a href="#">International Extremism & Terrorism</a></li>
+                        <li><a href="#">Hate Crimes Law</a></li>
+                        <li><a href="#">Cyberhate</a></li>
+                        <li><a href="#">Community Security</a></li>
+                        <li><a href="#">Law Enforcement</a></li>
+                        <li><a href="#">Hate Symbols Database</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Israel & International</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Europe</a></li>
+                        <li><a href="#">Iran</a></li>
+                        <li><a href="#">Israel & Middle East</a></li>
+                        <li><a href="#">Latin America</a></li>
+                        <li><a href="#">UN & International Organizations</a></li>
+                        <li><a href="#">U.S. Anti-Israel Activity</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Civil Rights</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">ADL in the Courts</a></li>
+                        <li><a href="#">Religious Freedom</a></li>
+                        <li><a href="#">Discrimination</a></li>
+                        <li><a href="#">Immigration</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education & Outreach</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Anti-Bias Education</a></li>
+                        <li><a href="#">Bullying/Cyberbulling</a></li>
+                        <li><a href="#">Holocaust Education</a></li>
+                        <li><a href="#">Confronting Anti-Semitism</a></li>
+                        <li><a href="#">Campus Affairs</a></li>
+                        <li><a href="#">Curriculum Resources</a></li>
+                        <li><a href="#">No Place for Hate</a></li>
+                        <li><a href="#">Interfaith Affairs</a></li>
+                        <li><a href="#">Hispanic/Latino Affairs</a></li>
+
+                    </ul>
+                </li>
+                <br>
+                <li><a href="#">About ADL</a></li>
+                <li><a href="#">Your Local ADL</a></li>
+            </ul>
+        </nav>
     </div>
+</aside>
 
-</div>
-
-<div class="row">
-
-    <!-- LEFT NAV
-    ================================================== -->
-    <div id="leftcol" class="col-md-3" style="">
-        <a href="http://www.adl.org/"><img class="visible-md visible-lg"
-                                           src="http://support.adl.org/images/12/adllogo.png"
-                                           width="193" height="168" alt="Anti-Defamation League"
-                                           style="z-index:999999; position:relative; margin-right:-6px;margin-top:-12px !important;float: right;"></a>
-
-        <div class="visible-md visible-lg">
-
-            <div class="tagline"><p><a href="http://www.adl.org/imagine/">Imagine a World<br>Without
-                Hate<sup>&reg;</sup></a></p></div>
-
-            <!-- COMPONENT -->
-            <div id="sectionNavigation-401190596" class="templateComponent" style="display: inline; "></div>
-
+<div class="canvas">
+    <!-- Bluebar-mobile -->
+    <aside>
+        <div class="navbar navbar-default navbar-fixed-top visible-xs visible-sm bluebar-mobile">
+            <nav>
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav navbar-nav">
+                    <li class="logo-sm visible-xs visible-sm"><a href="http://www.adl.org"><img src="assets/images/adllogo-tablet.png" alt="ADL"></a></li>
+                    <li class="visible-sm visible-xs bluebar-mobile-button"><a class="signup"><span>Sign up</span></a></li>
+                    <li class="visible-sm visible-xs bluebar-mobile-button"><a class="donate"><span>Donate</span></a></li>
+                </ul>
+            </nav>
         </div>
-        <a href="http://global100.adl.org/" class="hidden-xs hidden-sm"><img
-                src="http://www.adl.org/assets/images/12/wrapper/global100.png"
-                style="position:relative; margin-top:44px; margin-bottom:4px; float:right;"/></a>
-        <a href="http://support.adl.org/site/PageNavigator/contactus.html" class="hidden-xs hidden-sm"><img
-                src="http://www.adl.org/assets/images/12/wrapper/incidents.png"
-                style="position:relative; margin-top:37px; float:right;"/></a>
+    </aside><!--/Bluebar-mobile-->
 
-        <!-- SM-reusable-transfer MG: 10-2014 -->
+    <div class="container">
 
-        <div class="tabbable visible-md visible-lg" id="socialmediabar2014">
+        <aside>
+            <div class="navbar navbar-default visible-md visible-lg">
+                <div class="navbar-inner">
+                    <div id="bluebar" class="container">
 
+                        <div class="col-md-9 col-md-offset-3">
+                            <div class="navbar navbar-collapse visible-lg visible-md">
+                                <nav>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="http://www.adl.org/about-adl/">About</a></li>
+                                        <li><a href="http://regions.adl.org">Your Local ADL</a></li>
+                                        <li><a href="http://regions.adl.org/action-center/">Take Action</a></li>
+                                        <li><a href="http://blog.adl.org/">Blog</a></li>
+                                        <li><a href="http://www.adl.org/video/">Video</a></li>
+                                        <li><a href="http://www.adl.org/press-center">Newsroom</a></li>
 
-            <div class="accordion" id="accordion2" style="float:right;">
-
-
-                <div class="accordion-group" style=
-                        "border: 1px solid #1F407F; border-radius: 3px 3px 3px 3px;width: 190px;margin-top: 10px; padding:1px;">
-                    <div class="accordion-heading" style=
-                            "background-color: #FFFFFF; font-family: 'Century Gothic','Avant Garde','Futura',Geometric,sans-serif; font-size: 16px; font-weight: 300; height: 32px; line-height: 32px; text-align: left;">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                           href="#collapseTwo" style="padding:0; margin-left: 8px; font-weight: 600;">Get
-                            ADL Updates</a>
-                    </div>
-
-                    <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner" style=
-                                "padding:0; border:none;margin-left: 8px; font-weight: 300;">
-                            <h4 style="font-weight: 600; margin-bottom: 4px; margin-top:10px;">Read our
-                                Blog</h4>
-
-                            <p>Keep up-to-date with the <a href="http://blog.adl.org">Access ADL Blog</a>
-                                and get new post <a href="http://blog.adl.org/subscribe">by e-mail</a>.</p>
-
-                            <h4 style="font-weight: 600; margin-bottom: 4px;">Tune in</h4>
-
-                            <p>Listen and subscribe to the ADL Podcasts on <a
-                                    href="https://itunes.apple.com/us/podcast/adl-podcast/id695670323?mt=2&amp;uo=4">iTunes</a>,
-                                or visit the website: <a href="http://podcast.adl.org" target=
-                                        "_blank">podcast.adl.org</a>.</p>
-
-                            <h4 style="font-weight: 600; margin-bottom: 4px;">Stay connected</h4>
-
-                            <p style="margin-bottom: 7px;">Subscribe to <a
-                                    href="http://support.adl.org/site/PageServer?pagename=12quickreg">ADL
-                                Newsletters</a>.</p>
+                                        <li class="donate"><a href="http://www.adl.org/donate"><span>DONATE</span></a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li>
+                                            <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html" class="navbar-search hidden-sm" _lpchecked="1">
+                                                <div class="input-append">
+                                                    <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
+                                                    <input type="hidden" name="ie" value="UTF-8">
+                                                    <input type="text" name="q" size="35" class="search-query">
+                                                    <input type="image" src="http://support.adl.org/images/12/search.png" name="sa" class="btn btn-search">
+                                                </div>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
+
+                    </div><!--/bluebar-->
+                </div><!--/navbar-inner-->
+            </div><!--/navbar-default-->
+        </aside>
+
+        <div class="row">
+            <!--LEFT NAV -->
+            <aside>
+
+                <div id="leftcol" class="col-md-3">
+
+                    <!-- Logo -->
+                    <a href="http://www.adl.org/">
+                        <img class="visible-md visible-lg adl-logo" src="http://support.adl.org/images/12/adllogo.png" width="193" height="168" alt="Anti-Defamation League" />
+                    </a>
+
+
+                    <div class="visible-md visible-lg">
+                        <!-- Tagline-->
+                        <div class="tagline">
+                            <p><a href="http://www.adl.org/imagine/">
+                                Imagine a World<br>Without Hate<sup>&reg;</sup>
+                            </a></p>
+                        </div>
+
+                        <!-- COMPONENT -->
+                        <nav>
+                            <div id="sectionNavigation-401190596" class="templateComponent" style="display: inline; ">
+
+                                <!-- #REMOVE -->
+                                <div class="linksetMenu linksetSubMenu-1">
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/anti-semitism/">Anti-Semitism</a>
+                                    </div>
+
+                                    <div class="linksetSubMenu-2 navigationSubMenu">
+                                        <div class="linksetLinkInternal navigationItem">
+                                            <a href="http://www.adl.org/anti-semitism/united-states/">United States</a>
+                                        </div>
+                                        <div class="linksetLinkInternal navigationItem">
+                                            <a href="http://www.adl.org/anti-semitism/international/">International</a>
+                                        </div>
+                                        <div class="linksetLinkInternal navigationItem">
+                                            <a href="http://www.adl.org/anti-semitism/muslim-arab-world/">Muslim/Arab World</a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/combating-hate/">Combating Hate</a>
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/israel-international/">Israel &amp; International</a>
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/civil-rights/">Civil Rights</a>
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/education-outreach/">Education &amp; Outreach</a>
+                                    </div>
+                                </div>
+                                <!--/#REMOVE -->
+
+                            </div>
+                        </nav>
+
                     </div>
+
+                    <!-- Badges -->
+                    <div class="left-nav-badges hidden-sm hidden-xs">
+                        <a href="http://global100.adl.org/"><img src="http://www.adl.org/assets/images/12/wrapper/global100.png" /></a>
+                        <a href="http://support.adl.org/site/PageNavigator/contactus.html"><img src="http://www.adl.org/assets/images/12/wrapper/incidents.png" /></a>
+                    </div><!--/Badges-->
+
+                    <!-- SM-reusable-transfer MG: 10-2014 -->
+                    <div class="tabbable visible-md visible-lg" id="socialmediabar2014">
+                        <div class="accordion" id="accordion2">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Get ADL Updates</a>
+                                </div><!--/accordin-heading-->
+                                <div id="collapseTwo" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                        <h4>Read our Blog</h4>
+                                        <p>Keep up-to-date with the <a href="http://blog.adl.org">Access ADL Blog</a> and get new post <a href="http://blog.adl.org/subscribe">by e-mail</a>.</p>
+                                        <h4>Tune in</h4>
+                                        <p>Listen and subscribe to the ADL Podcasts on <a href="https://itunes.apple.com/us/podcast/adl-podcast/id695670323?mt=2&amp;uo=4">iTunes</a>, or visit the website: <a href="http://podcast.adl.org" target="_blank">podcast.adl.org</a>.</p>
+                                        <h4>Stay connected</h4>
+                                        <p style="margin-bottom: 7px;">Subscribe to <a href="http://support.adl.org/site/PageServer?pagename=12quickreg">ADL Newsletters</a>.</p>
+                                    </div><!--/accordion-inner-->
+                                </div><!--/collapseTwo-->
+                            </div><!--/accordion-group-->
+                        </div><!--/accordion2-->
+                    </div><!-- /socialmediabar2014-->
+                    <!-- .SM-reusable-transfer MG: 10-2014 -->
+
                 </div>
+
+            </aside><!--/LEFT NAV-->
+
+            <!-- CONTENT -->
+            <div id="rightcol" class="col-md-9">
+
+                <article>
+                    <p>
+                    <div class="visible-xs"> XS</div>
+                    <div class="visible-sm"> SM</div>
+                    <div class="visible-md"> MD</div>
+                    <div class="visible-lg"> LG</div>
+                    </p>
+                </article>
+
+
             </div>
-            <!-- /.tab-content -->
-        </div>
-        <!-- /.tabbable -->
+            <!--/CONTENT -->
 
-        <!-- .SM-reusable-transfer MG: 10-2014 -->
+        </div><!--/row-->
 
-    </div>
-    <!-- / LEFT NAV-->
+        <!--Footer Wrapper-->
+        <div id="wrapper-footer">
 
+            <!-- SM-reusable-transfer-->
+            <div class="col-md-9 col-md-offset-3 visible-sm visible-xs socialmediabar">
+                <ul>
+                    <li><a href="http://www.facebook.com/anti.defamation.league" target="_blank"><img src="http://www.adl.org/assets/icons/facebook_32.png"></a></li>
+                    <li><a href="http://twitter.com/#!/ADL_National" target="_blank"><img src="http://www.adl.org/assets/icons/twitter_32.png"></a></li>
+                    <li><a href="http://plus.google.com/+Anti-Defamation-League" target="_blank"><img src="http://www.adl.org/assets/icons/google-plus_32.png"></a></li>
+                    <li><a href="http://www.linkedin.com/company/anti-defamation-league" target="_blank"><img src="http://www.adl.org/assets/icons/linkedin_32.png"></a></li>
+                    <li><a href="http://pinterest.com/adlnational" target="_blank"><img src="http://www.adl.org/assets/icons/pinterest_32.png"></a></li>
+                    <li><a href="http://youradl.tumblr.com" target="_blank"><img src="http://www.adl.org/assets/icons/tumblr_32.png"></a></li>
+                    <li><a href="http://www.youtube.com/adlnational" target="_blank"><img src="http://www.adl.org/assets/icons/youtube_32.png"></a></li>
+                </ul>
+                <div class="btn-group">
+                    <a href="http://blog.adl.org"><button class="socialbutton">ADL Blogs</button></a>
+                    <a href="http://podcast.adl.org"><button class="socialbutton">Podcast</button></a>
+                    <a href="http://support.adl.org/site/PageServer?pagename=12quickreg"><button class="socialbutton" style="">Newsletter</button></a>
+                </div>
+            </div><!--/.SM-reusable-transfer-->
 
-    <!-- CONTENT -->
+            <div class="col-md-9 col-md-offset-3">
+                <img class="hidden-xs hidden-sm" src="http://support.adl.org/images/12/footerlogo.png" alt="ADL" align="left">
+                <footer>
+                    <p>
+                        <a href="http://www.adl.org/">Home</a> |
+                        <a href="http://support.adl.org/site/PageNavigator/contactus.html">Contact Us</a> |
+                        <a href="http://www.adl.org/about-adl/privacy-policy.html">Privacy Policy</a> |
+                        <a href="http://www.adl.org/donate">Donate</a> |
+                        <a href="http://support.adl.org/site/PageServer?pagename=12quickreg">Subscribe</a>
+                    </p>
+                    <p><small>Please call <a href="tel:+12128857700">1-212-885-7700</a> for general information or <a href="tel:+18663863235">1-866-386-3235</a> to donate by phone.</small></p>
+                    <p><small>&copy; <span id="year"></span> Anti-Defamation League. All rights reserved.<br> The Anti-Defamation League is a not-for-profit organization recognized as tax-exempt under Internal Revenue Code section 501(c)(3).</small></p>
+                </footer>
+            </div>
 
-    <div id="rightcol" class="col-md-9" style="margin-top:30px;">
-        <div class="col-md-9 ">
+        </div><!--/wrapper-footer-->
 
-            <p>
-
-            <div class="visible-xs"> XS</div>
-            <div class="visible-sm"> SM</div>
-            <div class="visible-md"> MD</div>
-            <div class="visible-lg"> LG</div>
-            </p>
-        </div>
-    </div>
-    <!-- CONTENT -->
-
-</div>
-
-
-<!--
-WRAPPER-->
-
-<div id="wrapper-footer" style=" padding-right:0;">
-
-
-    <div class="col-md-9 col-md-offset-3 visible-sm visible-xs socialmediabar" style="">
-
-        <!-- SM-reusable-transfer -->
-        <ul class="">
-            <li><a href="http://www.facebook.com/anti.defamation.league" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/facebook_32.png"></a></li>
-            <li><a href="http://twitter.com/#!/ADL_National" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/twitter_32.png"></a></li>
-            <li><a href="http://plus.google.com/+Anti-Defamation-League" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/google-plus_32.png"></a></li>
-            <li><a href="http://www.linkedin.com/company/anti-defamation-league" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/linkedin_32.png"></a></li>
-            <li><a href="http://pinterest.com/adlnational" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/pinterest_32.png"></a></li>
-            <li><a href="http://youradl.tumblr.com" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/tumblr_32.png"></a></li>
-            <li><a href="http://www.youtube.com/adlnational" target="_blank"><img
-                    src="http://www.adl.org/assets/icons/youtube_32.png"></a></li>
-        </ul>
-        <div class="btn-group">
-            <a href="http://blog.adl.org">
-                <button class="socialbutton" style="">ADL Blogs</button>
-            </a>
-            <a href="http://podcast.adl.org">
-                <button class="socialbutton" style="">Podcast</button>
-            </a>
-            <a href="http://support.adl.org/site/PageServer?pagename=12quickreg">
-                <button class="socialbutton" style="">Newsletter</button>
-            </a>
-
-        </div>
-
-        <!-- .SM-reusable-transfer -->
-    </div>
-
-
-    <div class="col-md-9 col-md-offset-3" style="float: left;">
-
-        <img class="hidden-xs hidden-sm pull-left" src="http://support.adl.org/images/12/footerlogo.png" alt="ADL">
-
-        <p style="text-align: left;"><a href="http://www.adl.org/">Home</a> | <a
-                href="http://support.adl.org/site/PageNavigator/contactus.html">Contact Us</a> | <a
-                href="http://www.adl.org/about-adl/privacy-policy.html">Privacy Policy</a> | <a
-                href="http://www.adl.org/donate">Donate</a> | <a
-                href="http://support.adl.org/site/PageServer?pagename=12quickreg">Subscribe</a></p>
-
-        <p style="text-align: left;">
-            <small>Please call 1-212-885-7700 for general information or 1-866-386-3235 to donate by phone.</small>
-        </p>
-
-        <p>
-            <small>&copy; <span id="year"></span> Anti-Defamation League. All rights reserved.</small>
-        </p>
-        <p>
-            <small>The Anti-Defamation League is a not-for-profit organization recognized as tax-exempt under
-                Internal Revenue Code section 501(c)(3).
-            </small>
-        </p>
-    </div>
-
-
-</div>
-
-</div>
-<!-- /.container -->
-
-
-</div>
+    </div><!-- /.container -->
+</div><!--/canvas-->
 
 
 </body>
