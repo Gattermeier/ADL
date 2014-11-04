@@ -1,0 +1,170 @@
+@import "variables.less";
+
+.navbar {
+  top: 0;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px !important;
+
+  .nav {
+    position: relative;
+    left: 0;
+    display: block;
+    float: left;
+    margin:0;
+
+     a{
+      margin-top: 6px;
+      float: none;
+      padding: 5px 5px 9px 17px;
+      line-height: 19px;
+      text-decoration: none;
+      text-shadow: none;
+      font-size: 13px;
+    }
+  }
+  //Tablet
+  @media (min-width: 992px) {
+    background: none;
+    border: none;
+  }
+
+  .navbar-toggle {
+    float: left;
+    margin-left: 15px;
+    display: block;
+
+    .icon-bar {
+      background-color: white;
+    }
+    &:hover {
+      background: @dark-blue;
+    }
+    &:focus {
+      background: @dark-blue;
+    }
+  }
+}
+
+.navbar-inner{
+  box-shadow: none;
+  padding:0;
+  background-color: @bar-blue;
+  filter: none;
+  height:42px;
+  margin-top: 0;
+  clear: both;
+
+  #bluebar {
+    .navbar-collapse{
+      padding-left:0;
+      padding-right:0;
+    }
+     .navbar-nav>li>a {
+       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+       font-weight: 700;
+       color:white;
+    }
+  }
+
+  .btn-search {
+    height: 27px;
+    width: 27px;
+    margin-top: 0;
+    background-color:@light-blue;
+  }
+
+}
+
+.navbar-search {
+  position: relative;
+  float: left;
+  margin-top: 4px;
+  margin-bottom: 0;
+
+  .search-query {
+    -moz-transition: none;
+    background-color: @light-blue !important;
+    border: none;
+    box-shadow: none;
+    color: #FCFCFC;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 5px 10px;
+    text-shadow: none;
+    height: 27px !important;
+    width: 110px;
+  }
+}
+
+.logo-sm {
+  padding:0 10px 5px 0;
+  height: 100%;
+  background-color:@dark-blue;
+  margin: 0;
+  float:left;
+  img {
+    height: 23px;
+  }
+}
+
+.bluebar-mobile{
+  padding: 0;
+  filter: none;
+  margin-top: 0;
+  clear: both;
+  height: 42px;
+  box-shadow: none;
+  background:@bar-blue none no-repeat;
+  .navbar-nav {
+    margin: 0;
+    height: 100%;
+  }
+}
+
+.navbar-default{
+  .bluebar-mobile-button{
+    float:left;
+    margin-top:3px;
+    height:100%;
+    span{
+      color: @dark-blue;
+      background-color: #FFFFFF;
+      border-radius: 3px;
+      padding: 5px 7px 5px;
+      line-height:20px;
+      font-size:14px;
+      font-weight:normal;
+    }
+    //Phone Size
+    @media(max-width:768px) {
+      margin:0;
+      background: none;
+      border: none;
+
+      a{
+        margin:0;
+        padding:13px 20px 5px 20px ;
+        height:49px;
+        font-weight:normal;
+      }
+      span{
+        background: none;
+        color:white;
+      }
+      .signup{
+        background: #5cb85c;
+      }
+      .donate{
+        background: #f0ad4e;
+      }
+    }
+}
+}
+
+//Phone Size
+//@media (min-width: 768px) {}
+//Tablet
+//@media (min-width: 992px) {}
