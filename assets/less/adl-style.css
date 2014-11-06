@@ -1,7 +1,10 @@
-/* Standard Elemnts */
-html,
 body {
   height: 100%;
+}
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
 }
 h1,
 h2,
@@ -17,18 +20,30 @@ li,
 p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-#socialmediabar2014 p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 h1 {
-  color: #7aa3f2;
+  color: #4f7dd5;
+  font-size: 24pt;
+  font-weight: 200;
+}
+h2 {
+  color: #990000;
+  font-size: 16pt;
+}
+hgroup h1 {
+  float: left;
+}
+hgroup h2 {
+  text-transform: uppercase;
+  float: left;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 #rightcol {
-  margin-top: 30px;
+  margin-top: 42px;
 }
-@media (min-width: 992px) {
-  body {
-    padding: 0;
+@media (max-width: 992px) {
+  #rightcol {
+    margin-top: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -312,6 +327,9 @@ h1 {
   font-weight: 600;
   margin-bottom: 4px;
   margin-top: 10px;
+}
+#socialmediabar2014 p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* Right Column */
 /*overwrite 12social.css*/

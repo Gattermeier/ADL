@@ -1,50 +1,60 @@
-/* Standard Elemnts */
-@import "variables.less";
-
-html, body {
+body {
   height:100%;
+  @media (min-width: 992px) {
+    padding: 0;
+  }
 }
-
 // Font Type
 h1, h2, h3, h4, h5, h6, #leftcol *{
   font-family: 'Century Gothic', 'Avant Garde', 'Futura', Geometric, sans-serif;
 }
-
 .navbar, li, p{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#socialmediabar2014{
-  p{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+//Header Style
+h1 {
+  color: @bar-blue;
+  font-size: 24pt;
+  font-weight: 200;
 }
-// Color
-h1{
-  color: @light-blue;
+h2 {
+  color:@adl-red;
+  font-size: 16pt;
+}
+
+hgroup{
+  h1{
+    float:left;
+  }
+  h2{
+    text-transform: uppercase;
+    float:left;
+    margin-top:30px;
+    margin-left:30px;
+  }
 }
 
 #rightcol{
-  margin-top:30px;
-}
 
-
-@media (min-width: 992px) {
-  body {
-    padding: 0;
+  margin-top:42px; // adds space on top of H1 Tags
+  @media (max-width: 992px) {
+    margin-top: 0; // removes space when in mobile version
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 970px;
-  }
+
+
+
+.container {
+    @media (min-width: 1200px){
+      width: 970px;}
+    @media (min-width: 768px) and (max-width: 992px) {
+      width: auto;
+    }
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .container {
-    width: auto;
-  }
-}
+
+
 
 .canvas {
   position: relative;
@@ -58,4 +68,8 @@ h1{
   }
 }
 
+//Phone Size
+//@media (min-width: 768px) {}
+//Tablet
+//@media (min-width: 992px) {}
 
