@@ -1,0 +1,68 @@
+<!--
+BS3 DT for PR
+Matthias Gattermeier
+11.06.2014
+
+Status: incomplete
+-->
+<div class="row" id="level3l">
+    <div class="span5">
+        <h1>Press Release</h1>
+        <h2><t:value id="title"></t:value></h2>
+
+        <t:if test="!isNull(sub_title)"><h3><t:value id="sub_title"></t:value></h3></t:if>
+
+
+
+        <t:value id="body"></t:value>
+        <p><cite><small>The Anti-Defamation League, founded in 1913, is the world's leading organization fighting anti-Semitism through programs and services that counteract hatred, prejudice and bigotry.</small></cite><p>
+    </div>
+    <div class="span4" style="margin-top: 75px;">
+
+        <div style="display: inline;" id="item-373357914" class="templateComponent"></div><!--Add this script-->
+        <t:if test="!isNull(alternate_version_url)"><div class="well well-small" style="padding-left:20px;"><a href="${alternate_version_url}"><t:value id="language_name"></t:value></a></div>
+        </t:if>
+        <t:if test="!isNull(image1)">
+            <t:list id="image1"><img src="${url}" width="300px" style="margin-top:30px;"/></t:list>
+            <t:if test="!isNull(caption1) && !isNull(image1)"><div class="caption"><t:value id="caption1"></t:value></div></t:if>
+            <t:if test="!isNull(credit1) && !isNull(image1)"><div class="credit"><t:value id="credit1"></t:value></div></t:if>
+        </t:if>
+
+        <t:if test="!isNull(update)"><h4>Update</h4>
+            <p><strong><t:value id="update_date"></t:value></strong>
+                <t:value id="update"></t:value></p></t:if>
+        <div style="display: inline;" class="templateComponent" id="item-352639854"></div>
+
+
+        <t:if test="!isNull(related1_text) || !isNull(related2_text) || !isNull(related3_text)">
+            <h4>Related</h4>
+            <ul style="margin-bottom:14px;">
+                <t:if test="!isNull(related1_text)"><li><a href="${related1_url}"><t:value id="related1_text"></t:value></a></li></t:if>
+                <t:if test="!isNull(related2_text)"><li><a href="${related2_url}"><t:value id="related2_text"></t:value></a></li></t:if>
+                <t:if test="!isNull(related3_text)"><li><a href="${related3_url}"><t:value id="related3_text"></t:value></a></li></t:if>
+
+            </ul>
+        </t:if>
+
+
+
+
+        <t:if test="!isNull(image2)">
+            <t:list id="image2"><img src="${url}" width="300px" style="margin-top:30px;"/></t:list>
+            <t:if test="!isNull(caption2) && !isNull(image2)"><div class="caption"><t:value id="caption2"></t:value></div></t:if>
+            <t:if test="!isNull(credit2) && !isNull(image2)"><div class="credit"><t:value id="credit2"></t:value></div></t:if>
+        </t:if>
+
+
+
+        <t:if test="!isNull(image3)">
+            <t:list id="image3"><img src="${url}" width="300px" style="margin-top:30px;"/></t:list>
+            <t:if test="!isNull(caption3) && !isNull(image3)"><div class="caption"><t:value id="caption3"></t:value></div></t:if>
+            <t:if test="!isNull(credit3) && !isNull(image3)"><div class="credit"><t:value id="credit3"></t:value></div></t:if>
+        </t:if>
+
+    </div>
+
+
+
+</div>

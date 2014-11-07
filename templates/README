@@ -1,0 +1,4 @@
+These are the folders for the display templates of each content type.
+File naming patterns are:
+Default - Single - Source // for new DT with convio code to be used as is in new convio DT
+Default - Single // based on source file but with sample content (within corresponding wrapper)
