@@ -5,3 +5,450 @@ Matthias Gattermeier
 
 Status: incomplete
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://support.adl.org/images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta property="twitter:account_id" content="19670226"/>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <title>
+        <t:value id="title">title</t:value>
+    </title>
+
+    <t:if test="isNull(description)">
+        <meta name="Description" content="Anti-Defamation League"/>
+    </t:if>
+    <t:else>
+        <t:set id="mdesc" value="toText(description, '') "/>
+        <t:set id="mdesc" value="escapeQuotes(mdesc) "/>
+        <meta name="Description" content="${mydesc}"/>
+    </t:else>
+
+    <link href="../../assets/css/base.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script data-main="../../controllers/fixed-wrapper" src="../../libs/requirejs/require.js"></script>
+</head>
+<body>
+
+<!--Off-canvas-->
+<section>
+    <div class="navmenu navmenu-default navmenu-fixed-left">
+
+        <div class="offcanvas-search">
+            <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control">
+                    <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <span class="input-group-btn">
+                        <input type="image" src="http://support.adl.org/images/12/search-blue.png" name="sa" class="btn btn-default">
+                    </span>
+                </div>
+            </form>
+        </div>
+        <nav>
+            <ul class="nav navmenu-nav">
+                <li><a href="#">Newsroom</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Take Action</a></li>
+                <li><p>&nbsp;</p></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Anti-Semitism</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">United States</a></li>
+                        <li><a href="#">International</a></li>
+                        <li><a href="#">Muslim/Arab World</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Combating Hate</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Domestic Extremism & Terrorism</a></li>
+                        <li><a href="#">International Extremism & Terrorism</a></li>
+                        <li><a href="#">Hate Crimes Law</a></li>
+                        <li><a href="#">Cyberhate</a></li>
+                        <li><a href="#">Community Security</a></li>
+                        <li><a href="#">Law Enforcement</a></li>
+                        <li><a href="#">Hate Symbols Database</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Israel & International</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Europe</a></li>
+                        <li><a href="#">Iran</a></li>
+                        <li><a href="#">Israel & Middle East</a></li>
+                        <li><a href="#">Latin America</a></li>
+                        <li><a href="#">UN & International Organizations</a></li>
+                        <li><a href="#">U.S. Anti-Israel Activity</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Civil Rights</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">ADL in the Courts</a></li>
+                        <li><a href="#">Religious Freedom</a></li>
+                        <li><a href="#">Discrimination</a></li>
+                        <li><a href="#">Immigration</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education & Outreach</a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Anti-Bias Education</a></li>
+                        <li><a href="#">Bullying/Cyberbulling</a></li>
+                        <li><a href="#">Holocaust Education</a></li>
+                        <li><a href="#">Confronting Anti-Semitism</a></li>
+                        <li><a href="#">Campus Affairs</a></li>
+                        <li><a href="#">Curriculum Resources</a></li>
+                        <li><a href="#">No Place for Hate</a></li>
+                        <li><a href="#">Interfaith Affairs</a></li>
+                        <li><a href="#">Hispanic/Latino Affairs</a></li>
+
+                    </ul>
+                </li>
+                <li><p>&nbsp;</p></li>
+                <li><a href="#">About ADL</a></li>
+                <li><a href="#">Your Local ADL</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<div class="canvas">
+    <!-- Bluebar-mobile -->
+    <section>
+        <div class="navbar navbar-default navbar-fixed-top visible-xs visible-sm bluebar-mobile">
+            <nav>
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav navbar-nav">
+                    <li class="logo-sm visible-xs visible-sm"><a href="http://www.adl.org"><img src="assets/images/adllogo-tablet.png" alt="ADL"></a></li>
+                    <li class="visible-sm visible-xs bluebar-mobile-button"><a class="signup"><span>Sign up</span></a></li>
+                    <li class="visible-sm visible-xs bluebar-mobile-button"><a class="donate"><span>Donate</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section><!--/Bluebar-mobile-->
+
+    <div class="container">
+
+        <section>
+            <div class="navbar navbar-default visible-md visible-lg">
+                <div class="navbar-inner">
+                    <div id="bluebar" class="container">
+
+                        <div class="col-md-9 col-md-offset-3">
+                            <div class="navbar navbar-collapse visible-lg visible-md">
+                                <nav>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="http://www.adl.org/about-adl/">About</a></li>
+                                        <li><a href="http://regions.adl.org">Your Local ADL</a></li>
+                                        <li><a href="http://regions.adl.org/action-center/">Take Action</a></li>
+                                        <li><a href="http://blog.adl.org/">Blog</a></li>
+                                        <li><a href="http://www.adl.org/video/">Video</a></li>
+                                        <li><a href="http://www.adl.org/press-center">Newsroom</a></li>
+
+                                        <li class="donate"><a href="http://www.adl.org/donate"><span>DONATE</span></a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li>
+                                            <form id="cse-search-box" action="http://www.adl.org/12Home/search-results.html" class="navbar-search hidden-sm" _lpchecked="1">
+                                                <div class="input-append">
+                                                    <input type="hidden" name="cx" value="011346335056800985113:lqqt2atnvmk">
+                                                    <input type="hidden" name="ie" value="UTF-8">
+                                                    <input type="text" name="q" size="35" class="search-query">
+                                                    <input type="image" src="http://support.adl.org/images/12/search.png" name="sa" class="btn btn-search">
+                                                </div>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                    </div><!--/bluebar-->
+                </div><!--/navbar-inner-->
+            </div><!--/navbar-default-->
+        </section>
+
+        <div class="row">
+            <!--LEFT NAV -->
+            <aside>
+
+                <div id="leftcol" class="col-md-3">
+
+                    <!-- Logo -->
+                    <a href="http://www.adl.org/">
+                        <img class="visible-md visible-lg adl-logo" src="http://support.adl.org/images/12/adllogo.png" width="193" height="168" alt="Anti-Defamation League" />
+                    </a>
+
+
+                    <div class="visible-md visible-lg">
+                        <!-- Tagline-->
+                        <div class="tagline">
+                            <p><a href="http://www.adl.org/imagine/">
+                                Imagine a World<br>Without Hate<sup>&reg;</sup>
+                            </a></p>
+                        </div>
+
+                        <!-- COMPONENT -->
+                        <nav>
+                            <div id="sectionNavigation-401190596" class="templateComponent" style="display: inline; ">
+
+                                <!-- #REMOVE -->
+                                <div class="linksetMenu linksetSubMenu-1">
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/anti-semitism/">Anti-Semitism</a>
+                                    </div>
+
+                                    <div class="linksetSubMenu-2 navigationSubMenu">
+                                        <div class="linksetLinkInternal navigationItem">
+                                            <a href="http://www.adl.org/anti-semitism/united-states/">United States</a>
+                                        </div>
+                                        <div class="linksetLinkInternal navigationItem">
+                                            <a href="http://www.adl.org/anti-semitism/international/">International</a>
+                                        </div>
+                                        <div class="linksetLinkInternal navigationItem">
+                                            <a href="http://www.adl.org/anti-semitism/muslim-arab-world/">Muslim/Arab World</a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/combating-hate/">Combating Hate</a>
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/israel-international/">Israel &amp; International</a>
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/civil-rights/">Civil Rights</a>
+                                    </div>
+
+                                    <div class="linksetLinkInternal navigationItem">
+                                        <a href="http://www.adl.org/education-outreach/">Education &amp; Outreach</a>
+                                    </div>
+                                </div>
+                                <!--/#REMOVE -->
+
+                            </div>
+                        </nav>
+
+                    </div>
+
+                    <!-- Badges -->
+                    <div class="left-nav-badges hidden-sm hidden-xs">
+                        <a href="http://global100.adl.org/"><img src="http://www.adl.org/assets/images/12/wrapper/global100.png" /></a>
+                        <a href="http://support.adl.org/site/PageNavigator/contactus.html"><img src="http://www.adl.org/assets/images/12/wrapper/incidents.png" /></a>
+                    </div><!--/Badges-->
+
+                    <!-- SM-reusable-transfer MG: 10-2014 -->
+                    <div class="tabbable visible-md visible-lg" id="socialmediabar2014">
+                        <div class="accordion" id="accordion2">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Get ADL Updates</a>
+                                </div><!--/accordin-heading-->
+                                <div id="collapseTwo" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                        <h4>Read our Blog</h4>
+                                        <p>Keep up-to-date with the <a href="http://blog.adl.org">Access ADL Blog</a> and get new post <a href="http://blog.adl.org/subscribe">by e-mail</a>.</p>
+                                        <h4>Tune in</h4>
+                                        <p>Listen and subscribe to the ADL Podcasts on <a href="https://itunes.apple.com/us/podcast/adl-podcast/id695670323?mt=2&amp;uo=4">iTunes</a>, or visit the website: <a href="http://podcast.adl.org" target="_blank">podcast.adl.org</a>.</p>
+                                        <h4>Stay connected</h4>
+                                        <p style="margin-bottom: 7px;">Subscribe to <a href="http://support.adl.org/site/PageServer?pagename=12quickreg">ADL Newsletters</a>.</p>
+                                    </div><!--/accordion-inner-->
+                                </div><!--/collapseTwo-->
+                            </div><!--/accordion-group-->
+                        </div><!--/accordion2-->
+                    </div><!-- /socialmediabar2014-->
+                    <!-- .SM-reusable-transfer MG: 10-2014 -->
+
+                </div>
+
+            </aside><!--/LEFT NAV-->
+
+            <!-- CONTENT -->
+            <div id="rightcol" class="col-md-9">
+
+
+
+                <div class="row" id="level3l">
+                    <div class="span5">
+                        <h1>Press Release</h1>
+                        <h2>ADL Succession Committee Announces Completion of Search Process</h2>
+
+                        <h3>Noted Social Entrepreneur Jonathan Greenblatt is Unanimous Choice for National Director</h3>
+
+
+
+                        <p>Los Angeles, CA, November 6, 2014 … An exhaustive, nationwide search for the next national director of the Anti-Defamation League (ADL) is now complete. The unanimous choice of the 16-member succession committee is Jonathan A. Greenblatt, a social entrepreneur, government official and corporate executive with extensive experience in building socially conscious businesses and creating innovative public-private partnerships.</p>
+                        <p>The decision is the culmination of a two-year national search for a successor to longtime director Abraham H. Foxman, which encompassed a review of hundreds of prospective candidates in the areas of business, law, academic and nonprofit management. Mr. Foxman is&nbsp;<a href="http://www.adl.org/press-center/press-releases/miscellaneous/abraham-foxman-to-step-down-as-national-director-july-2015.html">slated to retire</a>&nbsp;on July 20, 2015, when Mr. Greenblatt formally will step into the role.</p>
+                        <p>A social entrepreneur with extensive experience in the public and private sectors, Mr. Greenblatt has served as Special Assistant to the President and Director of the White House Office of Social Innovation &amp; Civic Participation since 2011. In this role, he has directed the Administration’s strategies on national service, civic engagement, social finance and impact investing.</p>
+                        <p>A graduate of Tufts University and the Kellogg School of Management at Northwestern University, he is the grandson of a Holocaust survivor who escaped from Nazi Germany. He has had a lifelong commitment to Jewish social causes, and his relationship to ADL started with a college internship and continued with his participation in an ADL professional leadership program.</p>
+                        <p>His selection was announced this morning in Los Angeles, where more than 300 leaders from across the country are gathered for ADL’s 2014 annual meeting. Barry Curtiss-Lusher, ADL National Chair and chair of the succession committee, introduced Mr. Greenblatt to the agency’s top lay leaders and professional staff.</p>
+                        <p>“We are delighted to announce the successful conclusion of the search process and our unanimous choice of Jonathan Greenblatt as the next national director of ADL,” Mr. Curtiss-Lusher said. “Jonathan brings to ADL an impressive track record of leadership in both the nonprofit and for-profit sectors and a deep and abiding commitment to our mission of combating anti-Semitism and defending the civil rights of all people.”</p>
+                        <p>“I welcome the successful completion of the search process and the committee’s choice of my successor, Jonathan Greenblatt,” Mr. Foxman said. “I’m confident that ADL will continue to thrive and grow under Jonathan’s leadership and I look forward to working with him to ensure a successful and smooth transition.”</p>
+                        <p>The succession committee, which included Mr. Foxman and prominent lay leaders, unanimously selected Mr. Greenblatt based on his impressive track record of building innovative brands, mission-driven businesses and cross-sector coalitions, as well as his deep interest in and commitment to issues including anti-Semitism, religious freedom, civil rights, Israel and the safety of the Jewish people.&nbsp; The national search was conducted in partnership with BoardWalk Consulting, an Atlanta-based executive search firm that specializes in recruiting nonprofit and foundation CEOs.</p>
+                        <p>“I am deeply honored to have been chosen to lead this vital organization as it begins its next century of service,” Mr. Greenblatt said. “Since its inception, ADL has had a tremendous impact on making America a more inclusive society for all people while defending the rights of Jews to freely practice their faith and be full participants in society. I am incredibly excited by the opportunity of building on those great successes.”</p>
+                        <p>At the White House he has served on the Domestic Policy Council, providing leadership to the $1 billion Corporation for National Community Service and helping to direct large-scale national service programs such as AmeriCorps. He has been instrumental in the design and development of breakthrough public-private partnerships that empower disadvantaged populations, such as the “My Brother’s Keeper” initiative. He has expanded access to capital through new policies such as “Pay for Success” and the Social Innovation Fund. He has convened public-private partnerships such as the White House Roundtable on Impact Investing that catalyzed more than $1.5 billion in new private sector commitments earlier this summer.</p>
+                        <p>Before joining the government, Mr. Greenblatt managed complex, decentralized businesses and nonprofit operations. In 2002, Mr. Greenblatt co-founded Ethos Brands, the business that launched Ethos Water, the premium bottled water that donates a portion of its profits to fund clean water programs around the world. The business was acquired by Starbucks Coffee Company in 2005, and Mr. Greenblatt subsequently served as a senior executive at the company, directing the successful launch of Ethos Water across North America and serving on the board of the Starbucks Foundation.</p>
+                        <p>Mr. Greenblatt then served as CEO of GOOD Worldwide Inc., an innovative media company that directly connected its subscribers to important causes and high-impact nonprofits. In 2009 he founded All for Good, a social enterprise that assembled one of the largest databases of volunteer opportunities on the Internet. It was acquired by Points of Light, the nonprofit founded by President George H.W. Bush and that manages the largest network of volunteer centers in the U.S., in 2011.&nbsp; Prior to these roles, as vice president of REALTOR.com (now Move Networks), he was responsible for the management of a $30 million business unit and the day-to-day management of more than 120 employees across North America.</p>
+                        <p>In addition to his business leadership, Mr. Greenblatt has served on the faculty at the UCLA Anderson Graduate School of Management where, from 2006 to 2011, he taught social entrepreneurship. He is a Henry Crown Fellow of the Aspen Institute and has served on various nonprofit boards including the Jewish Community Foundation of Los Angeles, KaBOOM! and water.org.</p>
+                        <p>Mr. Greenblatt has had a longstanding association with ADL. As an undergraduate student at Tufts University, he interned in ADL’s New England Regional Office in Boston. He is a graduate of ADL’s Salvin Leadership Program.</p>
+                        <p>He is married to Marjan Keypour Greenblatt, an Iranian-American Jewish immigrant, who worked as an associate director in ADL’s Los Angeles office for nearly eight years. They have three children.</p>
+                        <p>With national headquarters in New York City and a network of 27 regional offices across the United States, ADL is the nation’s leading Jewish civil and human rights organization. ADL plays a dynamic role as a force for change on the world stage, advancing civil and human rights and protecting the Jewish community and society from anti-Semitism, extremism, prejudice and hatred.</p>
+                        <p><cite><small>The Anti-Defamation League, founded in 1913, is the world's leading organization fighting anti-Semitism through programs and services that counteract hatred, prejudice and bigotry.</small></cite></p><p>
+                    </p></div>
+                    <div class="span4" style="margin-top: 75px;">
+
+                        <div id="item-373357914" style="display: inline;">
+
+
+
+
+
+
+
+                            <div class="promo"><!-- AddThis Button BEGIN -->
+                                <div style="margin-top: 10px;"><a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=adlconvio"><img alt="Bookmark and Share" height="16" src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" style="border: 0;" width="125"></a></div>
+                                <script type="text/javascript">// <![CDATA[
+                                var addthis_config = {"data_track_addressbar":true};
+                                // ]]></script>
+                                <script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=adlconvio" type="text/javascript"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh390" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;" src="//ct1.addthis.com/static/r07/sh178.html#iit=1415391339902&amp;tmr=load%3D1415391338393%26core%3D1415391339147%26main%3D1415391339886%26ifr%3D1415391339914&amp;cb=0&amp;cdn=1&amp;chr=UTF-8&amp;kw=&amp;ab=-&amp;dh=www.adl.org&amp;dr=http%3A%2F%2Fwww.adl.org%2Fpress-center%2F&amp;du=http%3A%2F%2Fwww.adl.org%2Fpress-center%2Fpress-releases%2Fmiscellaneous%2Fadl-succession-committee-announces-new-adl-national-director.html&amp;dt=ADL%20Succession%20Committee%20Announces%20Completion%20of%20Search%20Process&amp;dbg=0&amp;md=0&amp;cap=tc%3D0%26ab%3D1&amp;inst=1&amp;vcl=1&amp;jsl=12449&amp;prod=undefined&amp;lng=en-US&amp;ogt=&amp;pc=men&amp;pub=adlconvio&amp;ssl=0&amp;sid=545d286b5e1c1ce6&amp;srpl=1&amp;srcs=1&amp;srd=1&amp;srf=1&amp;srx=1&amp;ver=300&amp;xck=0&amp;xtr=0&amp;og=&amp;aa=0&amp;csi=undefined&amp;toLoJson=uvs%3D545d25a2bc9e5372001&amp;rev=9.3&amp;ct=1&amp;ce=plv%3D1%3B7%2Crsi%3D545bde97f9c5f150%3B7%2Cgen%3D1%3B7%2Cabc%3D1%3B7%2Cfcu%3D5378a529%3B7%2Crcf%3D%2523.VFvel_nF8VA%3B7&amp;xld=1&amp;xd=1&amp;fcu=VF0oa1N4pSl"></iframe></div><script type="text/javascript" src="http://ct1.addthis.com/static/r07/core162.js"></script>
+                                <!-- AddThis Button END --></div>
+                        </div><!--Add this script-->
+
+
+                        <img src="http://www.adl.org/assets/images-content/press-center/misc/Greenblatt-LA_380.jpg" width="300px" style="margin-top:30px;">
+                        <div class="caption">Social entrepreneur and government official Jonathan A. Greenblatt, the next National Director of the Anti-Defamation League, speaking at the ADL Annual Meeting in Los Angeles on November 6, 2014, where his appointment as the successor to longtime ADL National Director Abraham H. Foxman was officially announced.</div>
+
+
+
+
+                        <div id="item-352639854" style="display: inline;">
+
+
+
+
+
+
+
+                            <div class="promo"><div class="well" style="margin: 12px 0 24px 0; padding: 0 0 12px 20px;">
+                                <h4>Media Relations</h4>
+                                <p><a class="btn" href="mailto:adlmedia@adl.org">Press Inquiries</a></p>
+                            </div></div>
+                        </div>
+
+
+
+                        <h4>Related</h4>
+                        <ul style="margin-bottom:14px;">
+                            <li><a href="http://www.adl.org/press-center/press-releases/miscellaneous/abraham-foxman-to-step-down-as-national-director-july-2015.html#.VFuprvnF8VA">Abraham Foxman to Step Down in July 2015 as ADL National Director</a></li>
+                            <li><a href="http://www.adl.org/press-center/c/remarks-by-jonathan-greenblatt-2014-adl-annual-meeting.html#.VFv1NvnF8VC">Remarks by Jonathan A. Greenblatt to ADL Annual Meeting in Los Angeles</a></li>
+
+
+                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+            <!--/CONTENT -->
+
+        </div><!--/row-->
+
+        <!--Footer Wrapper-->
+        <section>
+            <div id="wrapper-footer">
+
+                <!-- SM-reusable-transfer-->
+                <div class="col-md-9 col-md-offset-3 visible-sm visible-xs socialmediabar">
+                    <ul>
+                        <li><a href="http://www.facebook.com/anti.defamation.league" target="_blank"><img src="http://www.adl.org/assets/icons/facebook_32.png"></a></li>
+                        <li><a href="http://twitter.com/#!/ADL_National" target="_blank"><img src="http://www.adl.org/assets/icons/twitter_32.png"></a></li>
+                        <li><a href="http://plus.google.com/+Anti-Defamation-League" target="_blank"><img src="http://www.adl.org/assets/icons/google-plus_32.png"></a></li>
+                        <li><a href="http://www.linkedin.com/company/anti-defamation-league" target="_blank"><img src="http://www.adl.org/assets/icons/linkedin_32.png"></a></li>
+                        <li><a href="http://pinterest.com/adlnational" target="_blank"><img src="http://www.adl.org/assets/icons/pinterest_32.png"></a></li>
+                        <li><a href="http://youradl.tumblr.com" target="_blank"><img src="http://www.adl.org/assets/icons/tumblr_32.png"></a></li>
+                        <li><a href="http://www.youtube.com/adlnational" target="_blank"><img src="http://www.adl.org/assets/icons/youtube_32.png"></a></li>
+                    </ul>
+                    <div class="btn-group">
+                        <a href="http://blog.adl.org"><button class="socialbutton">ADL Blogs</button></a>
+                        <a href="http://podcast.adl.org"><button class="socialbutton">Podcast</button></a>
+                        <a href="http://support.adl.org/site/PageServer?pagename=12quickreg"><button class="socialbutton" style="">Newsletter</button></a>
+                    </div>
+                </div><!--/.SM-reusable-transfer-->
+
+                <div class="col-md-9 col-md-offset-3">
+                    <img class="hidden-xs hidden-sm" src="http://support.adl.org/images/12/footerlogo.png" alt="ADL" align="left">
+                    <footer>
+                        <p>
+                            <a href="http://www.adl.org/">Home</a> |
+                            <a href="http://support.adl.org/site/PageNavigator/contactus.html">Contact Us</a> |
+                            <a href="http://www.adl.org/about-adl/privacy-policy.html">Privacy Policy</a> |
+                            <a href="http://www.adl.org/donate">Donate</a> |
+                            <a href="http://support.adl.org/site/PageServer?pagename=12quickreg">Subscribe</a>
+                        </p>
+                        <p><small>Please call <a href="tel:+12128857700">1-212-885-7700</a> for general information or <a href="tel:+18663863235">1-866-386-3235</a> to donate by phone.</small></p>
+                        <p><small>&copy; <span id="year"></span> Anti-Defamation League. All rights reserved.<br> The Anti-Defamation League is a not-for-profit organization recognized as tax-exempt under Internal Revenue Code section 501(c)(3).</small></p>
+                    </footer>
+                </div>
+
+            </div><!--/wrapper-footer-->
+        </section>
+
+    </div><!-- /.container -->
+</div><!--/canvas-->
+
+
+</body>
+</html>

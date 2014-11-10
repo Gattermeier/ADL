@@ -4,8 +4,8 @@
 
 requirejs.config({
     paths: {
-        jquery: ['//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min','../libs/jquery/dist/jquery.min']
-        ,bootstrap: ['//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min','../libs/bootstrap/dist/js/bootstrap.min']
+        jquery: '../libs/jquery/dist/jquery.min'
+        ,bootstrap: '../libs/bootstrap/dist/js/bootstrap.min'
         ,offcanvas:'../libs/jasny-bootstrap/js/offcanvas'
         ,vue: 'vue/dist/vue.js'
 
