@@ -7,7 +7,9 @@ requirejs.config({
     paths: {
          jquery: ['//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min','../libs/jquery/dist/jquery.min']
         ,bootstrap: ['//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min','../libs/bootstrap/dist/js/bootstrap.min']
-        ,vue: 'vue/dist/vue.js'
+        ,easyab: '../assets/easyab.min'
+        ,ab:'../assets/js/ab'
+        ,vue: '../libs/vue/dist/vue'
         ,offcanvas:'../libs/jasny-bootstrap/js/offcanvas'
         ,'jquery-cookie': '../libs/jquery-cookie/jquery-cookie'
         ,jq_onload: 'jq_onload'
@@ -17,12 +19,12 @@ requirejs.config({
     },
     shim: {
          'bootstrap':{deps: ['jquery']}
-        ,'offcanvas': {deps: ['jquery']}
+        ,'offcanvas': {deps: ['bootstrap','jquery']}
         ,'jquery-cookie':{deps: ['jquery']}
         ,'jq_onload': {deps: ['jquery']}
         ,'jq_social': {deps: ['jquery']}
         ,'jq_events':{deps: ['jquery']}
-    }
+        ,'ab':{deps: ['easyab,jquery']}    }
 });
 
 requirejs(['events'], function( _e ) {
@@ -71,4 +73,10 @@ requirejs(['jquery','bootstrap', 'jq_events'], function( $ , _bootstrap , _jqe )
     return {};
 });
 
+
+
+requirejs(['jquery','easyab','ab'], function($,_easyab,_ab) {
+    console.log('ab loaded');
+    return {}
+});
 
