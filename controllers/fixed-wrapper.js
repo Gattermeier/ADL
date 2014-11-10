@@ -7,7 +7,7 @@ requirejs.config({
         jquery: '../libs/jquery/dist/jquery.min'
         ,bootstrap: '../libs/bootstrap/dist/js/bootstrap.min'
         ,offcanvas:'../libs/jasny-bootstrap/js/offcanvas'
-        ,easyab: '../assets/easyab.min'
+        ,easyab: '../assets/js/easyab.min'
         ,ab:'../assets/js/ab'
         ,vue: '../libs/vue/dist/vue'
 
@@ -15,7 +15,7 @@ requirejs.config({
     shim: {
         'bootstrap':{deps: ['jquery']}
         ,'offcanvas': {deps: ['bootstrap','jquery']}
-        ,'ab':{deps: ['easyab,jquery']}
+        ,'ab':{deps: ['easyab','jquery']}
 
     }
 });

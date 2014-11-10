@@ -7,7 +7,7 @@ requirejs.config({
     paths: {
          jquery: ['//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min','../libs/jquery/dist/jquery.min']
         ,bootstrap: ['//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min','../libs/bootstrap/dist/js/bootstrap.min']
-        ,easyab: '../assets/easyab.min'
+        ,easyab: '../assets/js/easyab.min'
         ,ab:'../assets/js/ab'
         ,vue: '../libs/vue/dist/vue'
         ,offcanvas:'../libs/jasny-bootstrap/js/offcanvas'
@@ -24,7 +24,7 @@ requirejs.config({
         ,'jq_onload': {deps: ['jquery']}
         ,'jq_social': {deps: ['jquery']}
         ,'jq_events':{deps: ['jquery']}
-        ,'ab':{deps: ['easyab,jquery']}    }
+        ,'ab':{deps: ['easyab','jquery']}    }
 });
 
 requirejs(['events'], function( _e ) {
