@@ -1,0 +1,24 @@
+/*mark please incorportate those changes into your less / css system & then take them out from here */
+.navbar-inner .btn-search {
+    border-radius: 0 3px 3px 0;
+    margin-left: -6px;
+    padding: 4px 4px;
+}
+
+.input-append input, .input-append select .uneditable-input {
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+
+h3 {
+    font-size: 16pt;
+}
+hgroup h1 {
+    clear: both !important; /* remove float: left; from lsss / css!! */
+}
+hgroup h2 {
+    clear: both !important; /* remove float: left; from lsss / css!! */
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+}
