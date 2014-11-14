@@ -165,11 +165,21 @@ hgroup h2 {
   font-weight: 700;
   color: white;
 }
+
+.input-append input, .input-append select .uneditable-input {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+
 .navbar-inner .btn-search {
   height: 27px;
   width: 27px;
   margin-top: 0;
   background-color: #7aa3f2;
+  border-radius: 0 3px 3px 0;
+  margin-left: -6px;
+  padding: 4px 4px;
 }
 .navbar-search {
   position: relative;

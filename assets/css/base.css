@@ -6,5 +6,5 @@
 /* base styles for off canvas */
 @import url(../../libs/jasny-bootstrap/dist/css/jasny-bootstrap.min.css);
 @import url(./jasny-bootstrap-fix.css);
-@import url(../adl-style.css);
+@import url(./adl-style.css);
 
