@@ -1,13 +1,3 @@
-body,
-html {
-  height: 100%;
-}
-@media (min-width: 992px) {
-  body,
-  html {
-    padding: 0;
-  }
-}
 h1,
 h2,
 h3,
@@ -39,6 +29,16 @@ hgroup h2 {
   float: left;
   margin-top: 30px;
   margin-left: 30px;
+}
+body,
+html {
+  height: 100%;
+}
+@media (min-width: 992px) {
+  body,
+  html {
+    padding: 0;
+  }
 }
 #rightcol {
   margin-top: 42px;
@@ -169,7 +169,12 @@ hgroup h2 {
   height: 27px;
   width: 27px;
   margin-top: 0;
+  margin-left: -6px;
+  padding: 4px;
   background-color: #7aa3f2;
+  border-radis: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radis: 0 3px 3px 0;
 }
 .navbar-search {
   position: relative;
@@ -190,6 +195,16 @@ hgroup h2 {
   height: 27px !important;
   width: 110px;
 }
+.navbar-search .input-append input {
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+}
+.navbar-search .input-append section {
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+}
 .logo-sm {
   padding: 0 10px 5px 0;
   height: 100%;
@@ -201,6 +216,8 @@ hgroup h2 {
   height: 23px;
 }
 .bluebar-mobile {
+  top: 0;
+  position: fixed;
   padding: 0;
   filter: none;
   margin-top: 0;
@@ -218,14 +235,16 @@ hgroup h2 {
   margin-top: 3px;
   height: 100%;
 }
-.navbar-default .bluebar-mobile-button span {
-  color: #1e407f;
-  background-color: #FFFFFF;
-  border-radius: 3px;
-  padding: 5px 7px 5px;
-  line-height: 20px;
-  font-size: 14px;
-  font-weight: normal;
+@media (max-width: 992px) {
+  .navbar-default .bluebar-mobile-button span {
+    color: #1e407f;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 5px 7px 5px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+  }
 }
 @media (max-width: 768px) {
   .navbar-default .bluebar-mobile-button {
@@ -233,13 +252,17 @@ hgroup h2 {
     background: none;
     border: none;
   }
+  .navbar-default .bluebar-mobile-button button {
+    z-index: 5;
+  }
   .navbar-default .bluebar-mobile-button a {
     margin: 0;
-    padding: 13px 20px 5px 20px ;
+    padding: 13px 15px 5px 15px;
     height: 49px;
     font-weight: normal;
   }
   .navbar-default .bluebar-mobile-button span {
+    padding: 0;
     background: none;
     color: white;
   }
